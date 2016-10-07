@@ -1,0 +1,13 @@
+<chuck-dir></chuck-dir>
+
+<div class="key-search">Search for a Chuck Keyword:
+  <br>
+  <input type="text" class="form-control" ng-model="input" placeholder="Keyword Search" />
+  <button class="btn btn-primary" ng-click="getJokes(input)"> Search </button>
+</div>
+
+<div class="white-box">
+  <p ng-repeat="quote in quotes">
+    {{quote.joke}}
+  </p>
+</div>
