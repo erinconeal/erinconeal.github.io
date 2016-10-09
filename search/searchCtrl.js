@@ -3,9 +3,9 @@ angular.module('chuckApp')
 
   $scope.getJokes = function(input) {
     chuckSrv.getJokes(input)
-    .then(function(response) {
-      console.log(response);
-      $scope.quotes = response;
+    .then(function(jokeArr) {
+      // console.log(response);
+      $scope.quotes = jokeArr;
       // $scope.quotes = quotes.replace(/&quot;/g, '\\"');
     })
   }

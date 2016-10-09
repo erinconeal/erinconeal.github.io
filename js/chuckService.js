@@ -12,15 +12,14 @@ angular.module('chuckApp')
       // console.log(response)
       var parsedResponse = response.data.value;
       var newArr = [];
+      
       for (var i = 0; i < parsedResponse.length; i++) {
         var arr2 = parsedResponse[i].joke.toLowerCase().split(' ');
-         if (arr2.indexOf(input.toLowerCase()) >= 0) {
+         if (arr2.indexOf(input.toLowerCase()) !== -1) {
            newArr.push(parsedResponse[i]);
          }
-         else {
-           newArr.push("Input not found.")
-         }
       }
+
       deferred.resolve(newArr);
     })
     return deferred.promise;
