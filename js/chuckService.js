@@ -12,12 +12,18 @@ angular.module('chuckApp')
       // console.log(response)
       var parsedResponse = response.data.value;
       var newArr = [];
-      
+      var flag = false;
+
       for (var i = 0; i < parsedResponse.length; i++) {
         var arr2 = parsedResponse[i].joke.toLowerCase().split(' ');
          if (arr2.indexOf(input.toLowerCase()) !== -1) {
            newArr.push(parsedResponse[i]);
+           flag = true;
          }
+      }
+
+      if (!flag) {
+        deferred.resolve([{joke: 'Term not found'}])
       }
 
       deferred.resolve(newArr);

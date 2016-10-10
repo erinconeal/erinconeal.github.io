@@ -1,11 +1,11 @@
 <chuck-dir></chuck-dir>
 
 <div class="main-body">
-  <img class="portrait" src="images/chuck3.png" ng-click="getQuote()"/>
   <div class="quote-bubble">
-    <div ng-repeat="quote in quotes">
+    <div ng-repeat="quote in quotes track by $index">
       {{quote.joke}}
     </div>
   </div>
+  <img class="portrait" src="images/chuck3.png" ng-click="getQuote()"/>
 
 </div>

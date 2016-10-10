@@ -5,6 +5,10 @@ angular.module('chuckApp')
   chuckSrv.getBio()
   .then(function(response) {
     // console.log(response);
-    $scope.quotes = response.data.value;
+    $scope.quotes = response.data.value; //array of objects
+    for (var i = 0; i < $scope.quotes.length; i++) {
+      $scope.quotes[i].joke = $scope.quotes[i].joke.split('&quot;').join('\"');
+    }
+
   })
 })

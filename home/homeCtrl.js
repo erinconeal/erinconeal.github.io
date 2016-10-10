@@ -6,7 +6,8 @@ angular.module('chuckApp')
     .then(function(response) {
       // console.log(response);
       $scope.quotes = response.data;
-      // $scope.quotes = quotes.replace(/&quot;/g, '\"');
+      $scope.quotes.value.joke = $scope.quotes.value.joke.split('&quot;').join('\"');
+      // console.log($scope.quotes)
     })
   }
 
